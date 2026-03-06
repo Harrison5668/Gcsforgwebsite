@@ -133,7 +133,13 @@ window.addEventListener('resize', function() {
 });
 
 // Toggle speaker bio function
-function toggleBio(button) {
+function toggleBio(button, event) {
+    // Prevent any default button behavior
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+    
     const card = button.closest('.speaker-card');
     const bio = card.querySelector('.speaker-bio');
     const isExpanded = bio.classList.contains('expanded');
@@ -159,11 +165,11 @@ function toggleBio(button) {
         // Close all other bios first
         closeBio();
         
-        // Open current bio
+        // Open current bio immediately without any delay
         bio.classList.add('expanded');
         overlay.classList.add('active');
         button.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        document.body.style.overflow = 'hidden';
         
         const currentLang = localStorage.getItem('preferredLanguage') || 'en';
         if (currentLang === 'zh') {
