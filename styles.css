@@ -150,14 +150,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('image/background/background.jpg') no-repeat center 60px;
+    background: url('image/background/background.jpg') no-repeat center 65px;
     background-size: contain;
     background-color: #1AA3D8;
     color: white;
     text-align: center;
-    padding-top: 80px;
-    min-height: auto;
-    aspect-ratio: 16 / 9;
+    padding-top: 0;
+    padding-bottom: 1000px;
+    min-height: calc(100vh + 65px);
+    height: auto;
 }
 
 .hero-overlay {
