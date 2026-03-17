@@ -150,7 +150,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('image/background/background.jpg') no-repeat center 65px;
+    background: url('image/background/background-en.jpg') no-repeat center 65px;
     background-size: contain;
     background-color: #1AA3D8;
     color: white;
@@ -159,6 +159,11 @@ body {
     padding-bottom: 1000px;
     min-height: calc(100vh + 65px);
     height: auto;
+}
+
+/* Chinese background image */
+html[lang="zh"] .hero {
+    background-image: url('image/background/background.jpg');
 }
 
 .hero-overlay {

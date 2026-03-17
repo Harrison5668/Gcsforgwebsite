@@ -81,6 +81,9 @@ document.addEventListener('DOMContentLoaded', function() {
 function toggleLanguage() {
     currentLang = currentLang === 'en' ? 'zh' : 'en';
     
+    // Update html lang attribute for background image switching
+    document.documentElement.setAttribute('lang', currentLang);
+    
     // Toggle all language-specific elements
     document.querySelectorAll('.lang-en, .lang-zh').forEach(el => {
         if (el.classList.contains(`lang-${currentLang}`)) {
@@ -113,6 +116,9 @@ window.addEventListener('load', function() {
     const savedLang = localStorage.getItem('preferredLanguage');
     if (savedLang && savedLang !== currentLang) {
         toggleLanguage();
+    } else {
+        // Set initial lang attribute
+        document.documentElement.setAttribute('lang', currentLang);
     }
 });
 
