@@ -597,6 +597,36 @@ html[lang="zh"] .hero {
     margin: 0;
     padding: 0;
     border: none;
+    /* Crop 5% from top and bottom by default */
+    object-fit: cover;
+    aspect-ratio: 10 / 9;
+}
+
+/* First agenda image: no crop on top, crop 5% from bottom */
+.agenda-images img.agenda-first {
+    object-position: center top;
+    aspect-ratio: 20 / 19;
+}
+
+/* Last agenda image (before virtual): no crop on bottom, crop 5% from top */
+.agenda-images img.agenda-last {
+    object-position: center bottom;
+    aspect-ratio: 20 / 19;
+}
+
+/* Virtual event agenda: no cropping */
+.agenda-images img.agenda-virtual {
+    object-fit: contain;
+    aspect-ratio: auto;
+}
+
+.virtual-event-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: center;
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
 }
 
 @media (max-width: 768px) {
